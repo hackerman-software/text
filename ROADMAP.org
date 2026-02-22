@@ -20,7 +20,8 @@
 
 * In progress
 
-- Local-first AI rework (focus on local-first and fast code completion, auto complete suggestions)
+- Local-first AI rework
+    focus on local-first and fast code completion, auto complete suggestions
 - Bring your own lexer (Cython-based)
 
 ** Testing
