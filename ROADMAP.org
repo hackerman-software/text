@@ -20,14 +20,14 @@
 
 * In progress
 
-- Local-first AI rework (focus on local-first and fast code completion, auto complete suggestions)
-- Bring your own lexer (Cython-based)
+- Local-first AI rework (focus on fast code completion, auto complete suggestions)
 
 ** Testing
 
 - Code scroller (minimap)
 - Support for mix-and-match LLMs (local and hosted)
 - Context-aware autocomplete
+- Bring your own lexer (Cython-based)
 
 * Ideas
 
