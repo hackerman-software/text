@@ -76,11 +76,15 @@ Hackerman Text support running shell commands and evaluating Python expressions 
 
 Inline commands can be triggered with /Inline Commands/ (/Cmd + Shift + Return/) in allowed files. By default, allowed files are /txt/ and /md/.
 
+#+begin_src
 % echo 'hello'
 hello
+#+end_src
 
+#+begin_src
 42**42
 150130937545296572356771972164254457814047970568738777235893533016064
+#+end_src
 
 ** Org-mode code execution
 
@@ -96,8 +100,10 @@ main(name)
 
 Moving cursor into this code block and running /Inline Command/ (/Cmd + Shift + Return/) will generate the below results.
 
+#+begin_src
 #+RESULTS: True
 : Welcome to Python in org-mode, Michael!
+#+end_src
 
 *** Lua
 
@@ -110,8 +116,10 @@ main(name)
 
 Moving cursor into this code block and running /Inline Command/ (/Cmd + Shift + Return/) will generate the below results.
 
+#+begin_src
 #+RESULTS: True
 : Welcome to Lua in org-mode, Michael!
+#+end_src
 
 *** JavaScript
 
@@ -124,8 +132,10 @@ main(name);
 
 Moving cursor into this code block and running /Inline Command/ (/Cmd + Shift + Return/) will generate the below results.
 
+#+begin_src
 #+RESULTS: True
 : Welcome to JavaScript in org-mode, Michael!
+#+end_src
 
 *** Hy
 
@@ -138,6 +148,8 @@ Moving cursor into this code block and running /Inline Command/ (/Cmd + Shift + 
 
 Moving cursor into this code block and running /Inline Command/ (/Cmd + Shift + Return/) will generate the below results.
 
+#+begin_src
 #+RESULTS: True
 : Welcome to Hy in org-mode, Michael !
+#+end_src
 
