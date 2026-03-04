@@ -42,7 +42,7 @@ Update your ~.hackerman~ config file (/Right-Click/ or /Cmd+Shift+P/ to open fun
 
 #+begin_src
 [models]
-code_completion                     inception
+code_completion                     mistral
 #+end_src
 
 *** Inception
