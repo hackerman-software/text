@@ -5,8 +5,8 @@
 
 First of all, thank you for trying *Hackerman Text*!
 
-- Suggestions, please submit [[https://github.com/HackermanAI/Text/discussions/categories/ideas][feature request]].
-- Bugs or other issues, please submit [[https://github.com/HackermanAI/Text/issues][bug report]].
+- Suggestions, please submit [[https://github.com/HackermanAI/Text/discussions/categories/ideas][feature request]]
+- Bugs or other issues, please submit [[https://github.com/HackermanAI/Text/issues][bug report]]
 
 Hackerman Text is free for personal or evaluation purposes (non-commercial only). We are 100% user-funded, so please consider purchasing a license to support continued development.
 
