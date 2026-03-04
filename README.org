@@ -1,19 +1,26 @@
 
 [[text.jpg]]
 
+
 * Quickstart
 
 First of all, thank you for trying *Hackerman Text*!
 
-- Suggestions, please submit [[https://github.com/HackermanAI/Text/discussions/categories/ideas][feature request]]
-- Bugs or other issues, please submit [[https://github.com/HackermanAI/Text/issues][bug report]]
+- Suggestions, please submit a [[https://github.com/HackermanAI/Text/discussions/categories/ideas][feature request]].
+- Bugs or other issues, please submit a [[https://github.com/HackermanAI/Text/issues][bug report]].
 
 Hackerman Text is free for personal or evaluation purposes (non-commercial only). We are 100% user-funded, so please consider purchasing a license to support continued development.
 
 Commercial use requires a license. You can buy one here: [[https://hackerman.ai/]]
 
 
+[[#how-to-setup-code-completion][How to setup code completion]]
+[[#inline-commands][Inline commands]]
+
+
 ** How to setup code completion
+
+Code completion can be triggered with /Code Completion/ (/Cmd + K/).
 
 *** Ollama
 
@@ -63,4 +70,74 @@ code_completion                     inception
 #+end_src
 
 
+* Inline commands
+
+Hackerman Text support running shell commands and evaluating Python expressions in any file.
+
+Inline commands can be triggered with /Inline Commands/ (/Cmd + Shift + Return/) in allowed files. By default, allowed files are /txt/ and /md/.
+
+% echo 'hello'
+hello
+
+42**42
+150130937545296572356771972164254457814047970568738777235893533016064
+
+** Org-mode code execution
+
+Hackerman Text support code execution in Org files.
+
+*** Python
+
+#+begin_src python :var name=Michael
+def main(name):
+    print(f"Welcome to Python in org-mode, { name }!")
+main(name)
+#+end_src
+
+Moving cursor into this code block and running /Inline Command/ (/Cmd + Shift + Return/) will generate the below results.
+
+#+RESULTS: True
+: Welcome to Python in org-mode, Michael!
+
+*** Lua
+
+#+begin_src lua :var name=Michael
+local function main(name)
+    print("Welcome to Lua in org-mode, " .. name .. "!")
+end
+main(name)
+#+end_src
+
+Moving cursor into this code block and running /Inline Command/ (/Cmd + Shift + Return/) will generate the below results.
+
+#+RESULTS: True
+: Welcome to Lua in org-mode, Michael!
+
+*** JavaScript
+
+#+begin_src javascript :var name=Michael
+function main(name){
+    console.log(`Welcome to JavaScript in org-mode, ${name}!`);
+}
+main(name);
+#+end_src
+
+Moving cursor into this code block and running /Inline Command/ (/Cmd + Shift + Return/) will generate the below results.
+
+#+RESULTS: True
+: Welcome to JavaScript in org-mode, Michael!
+
+*** Hy
+
+#+begin_src hylang :var name=Michael
+(defn main [name]
+    (print "Welcome to Hy in org-mode," name "!")
+)
+(main name)
+#+end_src
+
+Moving cursor into this code block and running /Inline Command/ (/Cmd + Shift + Return/) will generate the below results.
+
+#+RESULTS: True
+: Welcome to Hy in org-mode, Michael !
 
