@@ -16,7 +16,7 @@ Commercial use requires a license. You can buy one here: [[https://hackerman.ai/
 
 - [[#how-to-setup-code-completion][How to setup code completion]]
 - [[#inline-commands][Inline commands]]
-
+- [[#running-scripts][Running scripts]]
 
 ** How to setup code completion
 
@@ -152,4 +152,26 @@ Moving cursor into this code block and running /Inline Command/ (/Cmd + Shift + 
 #+RESULTS: True
 : Welcome to Hy in org-mode, Michael !
 #+end_src
+
+
+* Running scripts
+
+/This is still an experimental feature/
+
+This is an opt-in feature, so needs to enable in config:
+
+#+begin_src
+scripts_enabled                     true
+allow_unsafe_scripts                false
+#+end_src
+
+Scripts are loaded with /allow_unsafe_scripts false/ by default, this limits imports and function calls.
+
+Hackerman Text loads Python-functions from ~.../Application Support/Hackerman Text/.hackerman-scripts~. You can provide a path to your own scripts-file if preferred.
+
+#+begin_src
+path_to_scripts_file                -- path to external scripts file, requires restart
+#+end_src
+
+With /allow_unsafe_scripts false/, you can call /osascript(script)/ to run AppleScript, /run_in_terminal(command)/ to open Terminal and run command, and /alert(text)/ to show popup dialog with text.
 
