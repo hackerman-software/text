@@ -14,13 +14,13 @@ Hackerman Text is free for personal or evaluation purposes (non-commercial). Com
 We are 100% user-funded, so please consider [[https://hackerman.ai/#pricing][purchasing a license]] to support continued development.
 
 
-- [[#how-to-setup-code-completion][How to setup code completion]]
-- [[#inline-commands][Inline commands]]
-- [[#running-scripts][Running scripts]]
+- [[#code-completion][Code completion]]
+- [[#inline-commands-and-code-execution][Inline commands and code execution]]
+- [[#custom-editor-commands][Custom-editor-commands]]
 
-** How to setup code completion
+** Code completion
 
-Code completion can be triggered with /Code Completion/ (/Cmd + K/).
+Code completion can be triggered with /Code Completion/ (or /Cmd + K/).
 
 *** Ollama
 
@@ -32,49 +32,32 @@ Update your ~.hackerman~ config file (/Right-Click/ or /Cmd+Shift+P/ to open fun
 
 #+begin_src
 [models]
+
+-- ollama
+-- recommended models: qwen2.5-coder:1.5b, qwen2.5-coder:7b, sweepai/sweep-next-edit:latest, nate/instinct:latest
 code_completion                     ollama, qwen2.5-coder:1.5b
 #+end_src
 
-*** Mistral
+*** Mistral/ Inception
 
-Create an account and get your api key, see [[https://docs.mistral.ai/getting-started/quickstart]].
+Mistral: Create an account and get your api key, see [[https://docs.mistral.ai/getting-started/quickstart]].
 
-Export your api key as an environment variable in your terminal.
-
-#+begin_src
-export MISTRAL_API_KEY=YOUR_KEY_HERE
-#+end_src
+Inception: Create an account and get your api key, see [[https://docs.inceptionlabs.ai/get-started/authentication]].
 
 Update your ~.hackerman~ config file (/Right-Click/ or /Cmd+Shift+P/ to open function explorer, select /Open Config File/):
 
 #+begin_src
-[models]
-code_completion                     mistral
-#+end_src
-
-*** Inception
-
-Create an account and get your api key, see [[https://docs.inceptionlabs.ai/get-started/authentication]].
-
-Export your api key as an environment variable in your terminal.
-
-#+begin_src
-export INCEPTION_API_KEY=YOUR_KEY_HERE
-#+end_src
-
-Update your ~.hackerman~ config file (/Right-Click/ or /Cmd+Shift+P/ to open function explorer, select /Open Config File/):
-
-#+begin_src
-[models]
-code_completion                     inception
+-- cloud providers
+code_completion                     mistral, codestral-latest, API_KEY
+-- code_completion                     inception, mercury-coder, API_KEY
 #+end_src
 
 
-* Inline commands
+* Inline commands and code execution
 
-Hackerman Text support running shell commands and evaluating Python expressions in any file.
+Hackerman Text support running shell commands and evaluating Python expressions in any allowed file. By default, allowed files are /txt/ and /md/.
 
-Inline commands can be triggered with /Inline Commands/ (/Cmd + Shift + Return/) in allowed files. By default, allowed files are /txt/ and /md/.
+Inline commands can be triggered with /Inline Commands/ (or /Cmd + Shift + Return/).
 
 #+begin_src
 % echo 'hello'
@@ -86,11 +69,11 @@ hello
 150130937545296572356771972164254457814047970568738777235893533016064
 #+end_src
 
-** Org-mode code execution
+** Org-mode
 
 Hackerman Text support code execution in Org files.
 
-*** Python
+This currently works with /Python/, /Lua/, /JavaScript/, and /Hy/.
 
 #+begin_src python :var name=Michael
 def main(name):
@@ -98,80 +81,26 @@ def main(name):
 main(name)
 #+end_src
 
-Moving cursor into this code block and running /Inline Command/ (/Cmd + Shift + Return/) will generate the below results.
+Moving cursor into this code block and running /Inline Command/ (or /Cmd + Shift + Return/).
 
 #+begin_src
 #+RESULTS: True
 : Welcome to Python in org-mode, Michael!
 #+end_src
 
-*** Lua
 
-#+begin_src lua :var name=Michael
-local function main(name)
-    print("Welcome to Lua in org-mode, " .. name .. "!")
-end
-main(name)
-#+end_src
+* Custom editor commands
 
-Moving cursor into this code block and running /Inline Command/ (/Cmd + Shift + Return/) will generate the below results.
-
-#+begin_src
-#+RESULTS: True
-: Welcome to Lua in org-mode, Michael!
-#+end_src
-
-*** JavaScript
-
-#+begin_src javascript :var name=Michael
-function main(name){
-    console.log(`Welcome to JavaScript in org-mode, ${name}!`);
-}
-main(name);
-#+end_src
-
-Moving cursor into this code block and running /Inline Command/ (/Cmd + Shift + Return/) will generate the below results.
-
-#+begin_src
-#+RESULTS: True
-: Welcome to JavaScript in org-mode, Michael!
-#+end_src
-
-*** Hy
-
-#+begin_src hylang :var name=Michael
-(defn main [name]
-    (print "Welcome to Hy in org-mode," name "!")
-)
-(main name)
-#+end_src
-
-Moving cursor into this code block and running /Inline Command/ (/Cmd + Shift + Return/) will generate the below results.
-
-#+begin_src
-#+RESULTS: True
-: Welcome to Hy in org-mode, Michael !
-#+end_src
-
-
-* Running scripts
-
-/This is still an experimental feature/
-
-This is an opt-in feature, so needs to enable in config:
+This is an opt-in feature, you can enable in your ~.hackerman~ config file (/Right-Click/ or /Cmd+Shift+P/ to open function explorer, select /Open Config File/):
 
 #+begin_src
 scripts_enabled                     true
-allow_unsafe_scripts                false
+allow_unsafe_scripts                false -- allow imports
 #+end_src
 
-Scripts are loaded with /allow_unsafe_scripts false/ by default, this limits imports and function calls.
-
-Hackerman Text loads Python-functions from ~.../Application Support/Hackerman Text/.hackerman-scripts~. You can provide a path to your own scripts-file if preferred.
+Hackerman Text loads Python-functions from ~.../Application Support/Hackerman Text/.hackerman-scripts~. You can provide a path to your own ~.hackerman-scripts~-file if stored elsewhere.
 
 #+begin_src
 path_to_scripts_file                -- path to external scripts file, requires restart
 #+end_src
-
-With /allow_unsafe_scripts false/, you can call /osascript(script)/ to run AppleScript, /run_in_terminal(command)/ to open Terminal and run command, and /alert(text)/ to show popup dialog with text.
 
