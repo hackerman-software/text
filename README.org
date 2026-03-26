@@ -15,12 +15,12 @@
 2. Update your ~.hackerman~ config file (/Right-Click/ or /Cmd+Shift+P/ to open function explorer, then select /Open Config File/)
 3. Find and edit this section:
 
-#+begin_src
-[models]
-
--- ollama
-code_completion                     ollama, qwen2.5-coder:1.5b
-#+end_src
+    #+begin_src
+    [models]
+    
+    -- ollama
+    code_completion                     ollama, qwen2.5-coder:1.5b
+    #+end_src
 
 4. Code completion can be triggered with /Code Completion/ (or /Cmd + K/)
 
@@ -86,9 +86,10 @@ Move cursor inside code block and run /Inline Commands/ (or /Cmd + Shift + Retur
 (main name)
 #+end_src
 
+#+begin_src
 #+RESULTS: True
 : Welcome to Hy in org-mode, Michael !
-
+#+end_src
 
 *** How to use custom scripts
 
