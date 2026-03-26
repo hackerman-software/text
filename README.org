@@ -20,7 +20,7 @@
     
     -- ollama
     code_completion                     ollama, qwen2.5-coder:1.5b
-    #+end_src
+#+end_src
 
 4. Code completion can be triggered with /Code Completion/ (or ~Cmd + K~)
 
