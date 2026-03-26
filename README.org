@@ -1,63 +1,68 @@
 
-[[block.jpg]]
+* Issue tracker for Hackerman Text
+
+- [[https://github.com/hackerman-inc/text/issues][Issues]]
+- [[https://github.com/hackerman-inc/text/discussions/categories/feature-requests][Feature requests]]
 
 
-* Quickstart
+** FAQ
 
-First of all, thank you for trying *Hackerman Text*!
+*** How to setup code completion
 
-- Suggestions, please submit a [[https://github.com/hackerman-inc/text/discussions/categories/feature-requests][feature request]]
-- Bugs or other issues, please submit a [[https://github.com/hackerman-inc/text/issues][bug report]]
+*Ollama*
 
-Hackerman Text is free for personal or evaluation purposes (non-commercial). Commercial use requires a license.
-
-We are 100% user-funded, so please consider [[https://hackerman.ai/#pricing][purchasing a license]] to support continued development.
-
-
-- [[#code-completion][Code completion]]
-- [[#inline-commands-and-code-execution][Inline commands and code execution]]
-- [[#custom-editor-commands][Custom-editor-commands]]
-
-** Code completion
-
-Code completion can be triggered with /Code Completion/ (or /Cmd + K/).
-
-*** Ollama
-
-Hackerman Text can run some FIM/next-edit models via Ollama for very fast and 100% local code completion.
-
-You need to install Ollama, and download one of the recommended models (such as [[https://ollama.com/library/qwen2.5-coder]]).
-
-Update your ~.hackerman~ config file (/Right-Click/ or /Cmd+Shift+P/ to open function explorer, select /Open Config File/):
+1. Install Ollama, and download one of the recommended models (e.g. [[https://ollama.com/library/qwen2.5-coder]])
+2. Update your ~.hackerman~ config file (/Right-Click/ or /Cmd+Shift+P/ to open function explorer, then select /Open Config File/)
+3. Find and edit this section:
 
 #+begin_src
 [models]
 
 -- ollama
--- recommended models: qwen2.5-coder:1.5b, qwen2.5-coder:7b, sweepai/sweep-next-edit:latest, nate/instinct:latest
 code_completion                     ollama, qwen2.5-coder:1.5b
 #+end_src
 
-*** Mistral/ Inception
+4. Code completion can be triggered with /Code Completion/ (or /Cmd + K/)
 
-Mistral: Create an account and get your api key, see [[https://docs.mistral.ai/getting-started/quickstart]].
+*Mistral*
 
-Inception: Create an account and get your api key, see [[https://docs.inceptionlabs.ai/get-started/authentication]].
-
-Update your ~.hackerman~ config file (/Right-Click/ or /Cmd+Shift+P/ to open function explorer, select /Open Config File/):
+1. Create Mistral account, and get your api key (see [[https://docs.mistral.ai/getting-started/quickstart]])
+2. Update your ~.hackerman~ config file (/Right-Click/ or /Cmd+Shift+P/ to open function explorer, then select /Open Config File/)
+3. Find and edit this section (replace ~API_KEY~ with your Mistral api key):
 
 #+begin_src
+[models]
+
 -- cloud providers
 code_completion                     mistral, codestral-latest, API_KEY
--- code_completion                     inception, mercury-coder, API_KEY
 #+end_src
 
+4. Code completion can be triggered with /Code Completion/ (or /Cmd + K/)
 
-* Inline commands and code execution
+*Inception*
 
-Hackerman Text support running shell commands and evaluating Python expressions in any allowed file. By default, allowed files are /txt/ and /md/.
+1. Create Inception account, and get your api key (see [[https://docs.inceptionlabs.ai/get-started/authentication]])
+2. Update your ~.hackerman~ config file (/Right-Click/ or /Cmd+Shift+P/ to open function explorer, then select /Open Config File/)
+3. Find and edit this section (replace ~API_KEY~ with your Inception api key):
+
+#+begin_src
+[models]
+
+-- cloud providers
+code_completion                     inception, mercury-coder, API_KEY
+#+end_src
+
+4. Code completion can be triggered with /Code Completion/ (or /Cmd + K/)
+
+
+*** How to use inline commands
 
 Inline commands can be triggered with /Inline Commands/ (or /Cmd + Shift + Return/).
+
+*Shell and Python eval*
+
+This feature is only allowed in ~.txt~ and ~.md~ files by default.
+You can change allowed files in your ~.hackerman~ config file.
 
 #+begin_src
 % echo 'hello'
@@ -69,38 +74,36 @@ hello
 150130937545296572356771972164254457814047970568738777235893533016064
 #+end_src
 
-** Org-mode
+*Org-mode code execution*
 
-Hackerman Text support code execution in Org files.
+You an execute /Python/, /Lua/, /JavaScript/, and /Hy/ code in your ~.org~ files.
+Move cursor inside code block and run /Inline Commands/ (or /Cmd + Shift + Return/).
 
-This currently works with /Python/, /Lua/, /JavaScript/, and /Hy/.
-
-#+begin_src python :var name=Michael
-def main(name):
-    print(f"Welcome to Python in org-mode, { name }!")
-main(name)
+#+begin_src hylang :var name=Michael
+(defn main [name]
+    (print "Welcome to Hy in org-mode," name "!")
+)
+(main name)
 #+end_src
 
-Moving cursor into this code block and running /Inline Command/ (or /Cmd + Shift + Return/).
-
-#+begin_src
 #+RESULTS: True
-: Welcome to Python in org-mode, Michael!
-#+end_src
+: Welcome to Hy in org-mode, Michael !
 
 
-* Custom editor commands
+*** How to use custom scripts
 
-This is an opt-in feature, you can enable in your ~.hackerman~ config file (/Right-Click/ or /Cmd+Shift+P/ to open function explorer, select /Open Config File/):
+This feature is disabled by default.
+You can enable in your ~.hackerman~ config file.
 
 #+begin_src
 scripts_enabled                     true
 allow_unsafe_scripts                false -- allow imports
 #+end_src
 
-Hackerman Text loads Python-functions from ~.../Application Support/Hackerman Text/.hackerman-scripts~. You can provide a path to your own ~.hackerman-scripts~-file if stored elsewhere.
+Scripts are loaded from ~.../Application Support/Hackerman Text/.hackerman-scripts~.
+You can provide a path to your own ~.py~ file if stored elsewhere.
 
 #+begin_src
-path_to_scripts_file                -- path to external scripts file, requires restart
+path_to_scripts_file                path/to/plugins.py -- path to scripts file, requires restart
 #+end_src
 
