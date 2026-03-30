@@ -354,6 +354,7 @@ _link                               #9ECEF5, #9ECEF5
 ** Functions
 
 *accept_autocomplete*
+
 Accept the first item in the auto complete list.
 If no completion list is visible, do nothing.
 
