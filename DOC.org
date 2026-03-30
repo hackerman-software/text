@@ -691,19 +691,18 @@ If there is no selection, behavior may fall back to duplicating the current line
 Open the buffer explorer for quick switching between open buffers.
 
 *show_file_explorer*
-Show or focus the file explorer panel.
+Open the file explorer.
 
 *show_function_explorer*
-Open the function explorer for navigating symbols or functions in the current file.
+Open the function explorer.
+Shows the available editor commands and functions, including their key bindings.
+This can be used to quickly find, inspect, and run commands from the keyboard.
 
 *show_license_info*
-Show license and registration information.
-
-*show_outline_panel*
-Show or focus the outline panel for structural navigation of the current file.
+Show license information.
 
 *show_search_explorer*
-Show the search explorer, typically for project-wide search results.
+Show the search explorer for project-wide text search.
 
 *stuttered_page_down*
 Move down by a smaller-than-full-page step.
@@ -746,33 +745,37 @@ Switch to the eighth visible/open buffer slot.
 Switch to the ninth visible/open buffer slot.
 
 *tab*
-Insert a tab character or indent the current line or selection, depending on editor settings and context.
+Insert a tab character.
 
 *tab_width_2_spaces*
 Set the tab width to 2 spaces.
+This is for current buffer only and not persistent on close.
 
 *tab_width_4_spaces*
 Set the tab width to 4 spaces.
+This is for current buffer only and not persistent on close.
 
 *tear_off_buffer*
-Detach the current buffer into a separate window or independent view.
+Detach the current buffer into a new window.
 
 *toggle_indent_guides*
 Show or hide indentation guide lines.
+This is for current buffer only and not persistent on close.
 
 *toggle_newspaper_scroll*
-Toggle newspaper scroll mode.
-This usually changes how horizontal overflow is handled for long lines.
+Toggle newspaper scroll mode for the current file.
+When enabled, the current file is shown across both the main editor and split editor.
+This allows more content from the same file to stay in view at once.
 
 *toggle_read_only*
 Toggle read-only mode for the current buffer.
 
 *toggle_split_editor*
-Show or hide the split editor, or toggle between single-pane and split-pane layout.
+Show or hide the split editor.
 
 *transpose_line*
 Transpose lines near the cursor.
-Typically swaps the current line with the adjacent line.
+Swaps the current line with the line above.
 
 *undo*
 Undo the most recent edit.
