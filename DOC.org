@@ -359,14 +359,17 @@ Accept the first item in the auto complete list.
 If no completion list is visible, do nothing.
 
 *auto_detect_lexer*
+
 Attempt to detect the file type from the file name, then load the corresponding lexer.
 Usually restores syntax highlighting and language-specific behavior after switching to plain text.
 
 *backtab*
+
 Perform reverse tab.
 Typically unindents the current line or selected lines.
 
 *cancel*
+
 Cancel active transient UI or editing states.
 Close open dialog windows.
 Dismiss popups.
@@ -374,459 +377,601 @@ Collapse multi-cursor to a single cursor.
 Abort incremental actions such as search focus or pending command states.
 
 *center_on_cursor*
+
 Center the current view on the cursor position without changing the cursor location.
 
 *char_left*
+
 Move the cursor one character to the left.
 
 *char_left_extend*
+
 Extend the selection one character to the left.
 
 *char_right*
+
 Move the cursor one character to the right.
 
 *char_right_extend*
+
 Extend the selection one character to the right.
 
 *close_file*
+
 Close the current file or buffer.
 If the file has unsaved changes, a save prompt may be shown.
 
 *close_other_files*
+
 Close all open files except the current one.
 Unsaved buffers may trigger save prompts.
 
 *code_completion*
+
 Trigger AI code completion at the cursor position.
 Uses the configured fill-in-the-middle backend, such as Ollama, Mistral, or Inception, as defined in the config file.
 
 *copy*
+
 Copy the current selection to the clipboard.
 
 *copy_path_to_file*
+
 Copy the full path of the current file to the clipboard.
 
 *cut*
+
 Cut the current selection to the clipboard.
 
 *delete*
+
 Delete the character to the left of the cursor.
 If text is selected, delete the selection instead.
 
 *delete_line*
+
 Delete the current line or all lines touched by the current selection(s).
 
 *delete_line_left*
+
 Delete from the cursor to the start of the line.
 
 *delete_line_right*
+
 Delete from the cursor to the end of the line.
 
 *delete_not_newline*
+
 Delete the character to the left of the cursor, but do not remove line breaks.
 Useful for preserving line structure while deleting indentation or content.
 
 *delete_paragraph_left*
+
 Delete from the cursor backward to the start of the current paragraph.
 Paragraph boundaries usually correspond to blank-line-separated blocks.
 
 *delete_paragraph_right*
+
 Delete from the cursor forward to the end of the current paragraph.
 
 *delete_right*
+
 Delete the character to the right of the cursor.
 If text is selected, delete the selection instead.
 
 *delete_word_left*
+
 Delete the word to the left of the cursor.
 
 *delete_word_right*
+
 Delete the word to the right of the cursor.
 
 *document_end*
+
 Move the cursor to the end of the document.
 
 *document_end_extend*
+
 Extend the selection to the end of the document.
 
 *document_start*
+
 Move the cursor to the start of the document.
 
 *document_start_extend*
+
 Extend the selection to the start of the document.
 
 *duplicate_line*
+
 Duplicate the current line.
 If multiple lines are selected, duplicate the selected lines.
 
 *find_in_file*
+
 Open the in-file search UI for the current buffer.
 
 *focus_main_editor*
+
 Move keyboard focus to the main editor pane.
 
 *focus_split_editor*
+
 Move keyboard focus to the split editor pane.
 
 *fold_all*
+
 Fold/unfold all foldable regions in the current document.
 
 *fold_line*
+
 Toggle folding on the fold block at the current line.
 If the current line is not a fold header, the nearest enclosing fold may be used.
 
 *go_to_line*
+
 Open the go-to-line prompt and jump to a specified line number.
 
 *home*
+
 Move to the logical or visible home position on the current line.
 
 *home_extend*
+
 Extend the selection to the home position on the current line.
 
 *indent_with_spaces*
+
 Configure indentation to insert spaces when indenting or pressing Tab.
 This is for current buffer only and not persistent on close.
 
 *indent_with_tabs*
+
 Configure indentation to insert tab characters when indenting or pressing Tab.
 This is for current buffer only and not persistent on close.
 
 *inline_command*
+
 Execute the inline command at the cursor.
 This is used for org-mode code execution, shell commands, and expression evaluation.
 Output may be inserted inline or into a results block depending on context.
 
 *line_add_caret_down*
+
 Add an additional caret on the line below the current caret.
 
 *line_add_caret_up*
+
 Add an additional caret on the line above the current caret.
 
 *line_comment*
+
 Toggle line comments on the current line or selected lines.
 Uses the active lexer or file type to determine the comment syntax.
 
 *line_down*
+
 Move the cursor one line down.
 
 *line_down_end*
+
 Move to the end of the next line.
 
 *line_down_end_extend*
+
 Extend the selection to the end of the next line.
 
 *line_down_extend*
+
 Extend the selection one line down.
 
 *line_down_start*
+
 Move to the start of the next line.
 
 *line_down_start_extend*
+
 Extend the selection to the start of the next line.
 
 *line_end*
+
 Move the cursor to the end of the current line.
 
 *line_end_extend*
+
 Extend the selection to the end of the current line.
 
 *line_indent*
+
 Indent the current line or all selected lines.
 
 *line_scroll_down*
+
 Scroll the view down by one line without moving the cursor, when possible.
 
 *line_scroll_up*
+
 Scroll the view up by one line without moving the cursor, when possible.
 
 *line_start*
+
 Move the cursor to the start of the current line.
 
 *line_start_extend*
+
 Extend the selection to the start of the current line.
 
 *line_unindent*
+
 Unindent the current line or all selected lines.
 
 *line_up*
+
 Move the cursor one line up.
 
 *line_up_extend*
+
 Extend the selection one line up.
 
 *line_up_start*
+
 Move to the start of the previous line.
 
 *line_up_start_extend*
+
 Extend the selection to the start of the previous line.
 
 *lowercase*
+
 Convert the selected text to lowercase.
 
 *move_line_down*
+
 Move the current line, or selected lines, one line downward.
 
 *move_line_up*
+
 Move the current line, or selected lines, one line upward.
 
 *new_file*
+
 Create a new empty file.
 
 *new_window*
+
 Open a new window.
 
 *newline*
+
 Insert a newline at the cursor position.
 If text is selected, replace the selection.
 
 *newline_at_end_of_line*
+
 Insert a newline at the end of the current line, regardless of cursor column.
 
 *next_tab*
+
 Switch to the next open file tab.
 
 *open_config_file*
+
 Open the configuration file.
 
 *open_diff_in_new_buffer*
+
 Open a diff view in a new buffer.
 
 *open_file*
+
 Open a file from disk.
 
 *open_file_in_new_window*
+
 Open the current file in a new window.
 
 *open_scripts_file*
+
 Open the user scripts file.
 
 *open_terminal_at_file*
+
 Open a terminal at the current file's directory.
 
 *page_down*
+
 Move the view and cursor down by approximately one page.
 
 *page_down_extend*
+
 Extend the selection downward by approximately one page.
 
 *page_up*
+
 Move the view and cursor up by approximately one page.
 
 *page_up_extend*
+
 Extend the selection upward by approximately one page.
 
 *paragraph_down*
+
 Move the cursor to the next paragraph boundary.
 
 *paragraph_down_extend*
+
 Extend the selection to the next paragraph boundary.
 
 *paragraph_up*
+
 Move the cursor to the previous paragraph boundary.
 
 *paragraph_up_extend*
+
 Extend the selection to the previous paragraph boundary.
 
 *paste*
+
 Paste clipboard contents at the cursor position.
 If text is selected, replace the selection.
 
 *plain_text_lexer*
+
 Switch the current file to plain text mode.
 Disables language-specific highlighting and related lexer behavior.
 
 *previous_tab*
+
 Switch to the previous open file tab.
 
 *python_eval_line*
+
 Evaluate the current line as Python.
 Intended for quick inline execution.
 
 *redo*
+
 Redo the most recently undone edit.
 
 *reopen_last_closed_file*
+
 Reopen the most recently closed file, if available.
 
 *replace_all_eol*
+
 Normalize all end-of-line characters in the current file to the configured line ending style.
 
 *replace_tabs_with_spaces*
+
 Convert tab characters in the current file into spaces according to the current tab width.
 
 *reset_window_position*
+
 Reset the window to its default size and/or position.
 
 *reset_zoom*
+
 Reset editor zoom level to the default size.
 
 *reveal_in_finder*
+
 Reveal the current file in Finder.
 
 *reverse_line*
+
 Reverse the characters in the current line, or each selected line.
 
 *save_file*
+
 Save the current file.
 
 *save_file_as*
+
 Save the current file under a new name or path.
 
 *select_all*
+
 Select the entire contents of the current document.
 
 *select_matches*
+
 Select all matches of the current selection or search term in the current file.
 Often used to create multiple cursors for simultaneous editing.
 
 *select_next_match*
+
 Find the next occurrence of the current selection and add it as another selection.
 Usually does not wrap around the file.
 
 *selection_duplicate*
+
 Duplicate the current selection in place.
 If there is no selection, behavior may fall back to duplicating the current line.
 
 *show_buffer_explorer*
+
 Open the buffer explorer for quick switching between open buffers.
 
 *show_file_explorer*
+
 Open the file explorer.
 
 *show_function_explorer*
+
 Open the function explorer.
 Shows the available editor commands and functions, including their key bindings.
 This can be used to quickly find, inspect, and run commands from the keyboard.
 
 *show_license_info*
+
 Show license information.
 
 *show_search_explorer*
+
 Show the search explorer for project-wide text search.
 
 *stuttered_page_down*
+
 Move down by a smaller-than-full-page step.
 Useful for keeping more visual context than a full page jump.
 
 *stuttered_page_down_extend*
+
 Extend the selection downward by a small page step.
 
 *stuttered_page_up*
+
 Move up by a smaller-than-full-page step.
 
 *stuttered_page_up_extend*
+
 Extend the selection upward by a small page step.
 
 *switch_to_buffer_1*
+
 Switch to the first visible/open buffer slot.
 
 *switch_to_buffer_2*
+
 Switch to the second visible/open buffer slot.
 
 *switch_to_buffer_3*
+
 Switch to the third visible/open buffer slot.
 
 *switch_to_buffer_4*
+
 Switch to the fourth visible/open buffer slot.
 
 *switch_to_buffer_5*
+
 Switch to the fifth visible/open buffer slot.
 
 *switch_to_buffer_6*
+
 Switch to the sixth visible/open buffer slot.
 
 *switch_to_buffer_7*
+
 Switch to the seventh visible/open buffer slot.
 
 *switch_to_buffer_8*
+
 Switch to the eighth visible/open buffer slot.
 
 *switch_to_buffer_9*
+
 Switch to the ninth visible/open buffer slot.
 
 *tab*
+
 Insert a tab character.
 
 *tab_width_2_spaces*
+
 Set the tab width to 2 spaces.
 This is for current buffer only and not persistent on close.
 
 *tab_width_4_spaces*
+
 Set the tab width to 4 spaces.
 This is for current buffer only and not persistent on close.
 
 *tear_off_buffer*
+
 Detach the current buffer into a new window.
 
 *toggle_indent_guides*
+
 Show or hide indentation guide lines.
 This is for current buffer only and not persistent on close.
 
 *toggle_newspaper_scroll*
+
 Toggle newspaper scroll mode for the current file.
 When enabled, the current file is shown across both the main editor and split editor.
 This allows more content from the same file to stay in view at once.
 
 *toggle_read_only*
+
 Toggle read-only mode for the current buffer.
 
 *toggle_split_editor*
+
 Show or hide the split editor.
 
 *transpose_line*
+
 Transpose lines near the cursor.
 Swaps the current line with the line above.
 
 *undo*
+
 Undo the most recent edit.
 
 *unselect_last_match*
+
 Remove the most recently added selection from a multi-selection set.
 
 *uppercase*
+
 Convert the selected text to uppercase.
 
 *word_left*
+
 Move the cursor left by one word.
 
 *word_left_end*
+
 Move to the end boundary of the previous word.
 
 *word_left_end_extend*
+
 Extend the selection to the end boundary of the previous word.
 
 *word_left_extend*
+
 Extend the selection left by one word.
 
 *word_part_left*
+
 Move left by one word part.
 Useful for camelCase, snake_case, or similar mixed identifiers.
 
 *word_part_left_extend*
+
 Extend the selection left by one word part.
 
 *word_part_right*
+
 Move right by one word part.
 
 *word_part_right_extend*
+
 Extend the selection right by one word part.
 
 *word_right*
+
 Move the cursor right by one word.
 
 *word_right_end*
+
 Move to the end boundary of the next word.
 
 *word_right_end_extend*
+
 Extend the selection to the end boundary of the next word.
 
 *word_right_extend*
+
 Extend the selection right by one word.
 
 *zoom_in*
+
 Increase the editor zoom level.
 
 *zoom_out*
+
 Decrease the editor zoom level.
 
