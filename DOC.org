@@ -829,18 +829,3 @@ Increase the editor zoom level.
 *zoom_out*
 Decrease the editor zoom level.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
