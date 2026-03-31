@@ -6,7 +6,8 @@
     - [[#editor][Editor]]
     - [[#keybinds][Keybinds]]
     - [[#themes][Themes]]
-- [[#functions][Functions]]
+- [[#editor-commands][Editor commands]]
+- [[#custom-editor-commands][Custom editor commands]]
 
 ** Configuration
 
@@ -311,7 +312,7 @@ switch_to_buffer_9                  Cmd + 9
 
 #+end_src
 
-Place keybindings for custom functions on the ~[user]~ section.
+Place key bindings for custom editor commands in the ~[user]~ section.
 
 #+begin_src
 
@@ -377,7 +378,9 @@ _link                               #9ECEF5, #9ECEF5
 
 #+end_src
 
-** Functions
+** Editor commands
+
+This section keeps a list of available built-in editor commands.
 
 *** accept_autocomplete
 
@@ -960,3 +963,44 @@ Zoom in by 1 point.
 *** zoom_out
 
 Zoom out by 1 point.
+
+** Custom editor commands
+
+This section keeps an up-to-date version of the default scripts-file.
+Use this as an example or base to build your own custom editor commands.
+
+#+begin_src
+# default scripts-file for Hackerman Text
+
+
+def toggle_system_appearance(self):
+    # run appscript on macos
+    
+    script = """
+    tell application "System Events"
+        tell appearance preferences
+            set dark mode to not dark mode
+        end tell
+    end tell
+    """
+    osascript(script)
+
+
+def build_and_run(self):
+    # example build commands based on file_type
+    
+    BUILD_MAP = {
+        "py": f"python { self.file_name }",
+        "tex": f"pdflatex { self.file_name } -o { self.file_name.split('.')[0] }.pdf",
+        "org": f"pandoc -f org -t pdf { self.file_name } -o { self.file_name.split('.')[0] }.pdf --pdf-engine=pdflatex",
+        "md": f"pandoc -f md -t pdf { self.file_name } -o { self.file_name.split('.')[0] }.pdf --pdf-engine=pdflatex",
+    }
+
+    if self.file_type not in BUILD_MAP:
+        show_message(f"No build command for { self.file_name } files.")
+        return
+    
+    run_in_terminal(BUILD_MAP[self.file_type])
+#+end_src
+
+
