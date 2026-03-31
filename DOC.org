@@ -543,12 +543,11 @@ Focus the split editor.
 
 *** fold_all
 
-Fold all foldable lines.
+Fold all foldable lines at current line's fold level.
 
 *** fold_line
 
-Fold the line at the given line number.
-If no line number is given, the current line is used.
+Fold the current line.
 
 *** go_to_line
 
