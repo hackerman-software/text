@@ -53,7 +53,7 @@ inline_shell_start_symbol           %
 scripts_enabled                     false
 allow_unsafe_scripts                false -- allow imports
 
-click_on_links                      false
+click_on_links                      false -- if false, use inline_command to activate
 
 -- ui
 
@@ -62,7 +62,7 @@ show_scrollbar                      true
 show_minimap                        false
 show_indent_guides                  true
 show_annotations                    true
-show_ui_borders                     false
+show_ui_borders                     true
 
 use_native_title_bar                false
 
