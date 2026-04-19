@@ -5,6 +5,7 @@
 - [[https://github.com/hackerman-software/text/discussions/categories/feature-requests][Feature requests]]
 - [[https://github.com/hackerman-software/text/blob/main/DOC.org][Documentation]]
 - [[https://github.com/hackerman-software/text/blob/main/EULA][End User License Agreement]]
+- [[https://github.com/hackerman-software/text/blob/main/PRIVACY][Privacy Policy]]
 
 ** FAQ
 
