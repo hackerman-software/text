@@ -5,12 +5,6 @@
 
 ** Getting started
 
-- [[#multi-tab-select][Multi-tab select]]
-- [[#code-completion][Code completion]]
-- [[#inline-shell-commands][Inline shell commands]]
-- [[#custom-editor-commands][Custom editor commands]]
-- [[#tips-and-tricks][Tips and tricks]]
-
 *** Multi-tab select
 
 [[./multitab_select.gif]]
@@ -69,6 +63,8 @@ Shift click on tab to multi-tab select.
 
 *** Inline shell commands
 
+[[./inline_commands.gif]]
+
 Inline commands can be triggered with /Inline Commands/ (or ~Cmd + Shift + Return~).
 
 *Shell and Python eval*
@@ -79,7 +75,6 @@ You can change allowed files in your ~.hackerman~ config file.
 #+begin_src
 % echo 'hello'
 hello
-#+end_src
 
 #+begin_src
 42**42
