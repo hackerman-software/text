@@ -1,20 +1,25 @@
 
 * Issue tracker for Hackerman Text
 
-- [[https://github.com/hackerman-software/text/issues][Issues]]
-- [[https://github.com/hackerman-software/text/discussions/categories/feature-requests][Feature requests]]
-- [[https://github.com/hackerman-software/text/blob/main/DOC.org][Documentation]]
-- [[https://github.com/hackerman-software/text/blob/main/EULA][End User License Agreement]]
-- [[https://github.com/hackerman-software/text/blob/main/PRIVACY][Privacy Policy]]
+[[https://github.com/hackerman-software/text/issues][Issues]] | [[https://github.com/hackerman-software/text/discussions/categories/feature-requests][Feature requests]] | [[https://github.com/hackerman-software/text/blob/main/DOC.org][Documentation]] | [[https://github.com/hackerman-software/text/blob/main/EULA][End User License Agreement]] | [[https://github.com/hackerman-software/text/blob/main/PRIVACY][Privacy Policy]]
 
-** FAQ
+** Getting started
 
-- [[#how-to-setup-code-completion][How to setup code completion]]
-- [[#how-to-use-inline-commands][How to use inline commands]]
-- [[#how-to-use-custom-scripts][How to use custom scripts]]
-- [[#other-and-misc][Other and misc]]
+- [[#multi-tab-select][Multi-tab select]]
+- [[#code-completion][Code completion]]
+- [[#inline-shell-commands][Inline shell commands]]
+- [[#custom-editor-commands][Custom editor commands]]
+- [[#tips-and-tricks][Tips and tricks]]
 
-*** How to setup code completion
+*** Multi-tab select
+
+[[./multitab_select.gif]]
+
+Shift click on tab to multi-tab select.
+
+*** Code completion
+
+[[./code_completion.gif]]
 
 *Ollama*
 
@@ -62,7 +67,7 @@
 4. Code completion can be triggered with /Code Completion/ (or ~Cmd + K~)
 
 
-*** How to use inline commands
+*** Inline shell commands
 
 Inline commands can be triggered with /Inline Commands/ (or ~Cmd + Shift + Return~).
 
@@ -98,7 +103,9 @@ Move cursor inside code block and run /Inline Commands/ (or ~Cmd + Shift + Retur
 : Welcome to Hy in org-mode, Michael !
 #+end_src
 
-*** How to use custom scripts
+*** Custom editor commands
+
+[[./custom_editor_commands.gif]]
 
 This feature is disabled by default.
 You can enable in your ~.hackerman~ config file.
@@ -115,7 +122,7 @@ You can provide a path to your own ~.py~ file if stored elsewhere.
 path_to_scripts_file                path/to/plugins.py -- path to scripts file, requires restart
 #+end_src
 
-*** Other and misc
+*** Tips and tricks
 
 - Right click to /Show Function Explorer/ (or ~Cmd + Shift + P~), this list shows all active key bindings
 - Double click on line number to /Fold Line/ (or ~Cmd + L~)
