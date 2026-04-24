@@ -5,11 +5,11 @@
 
 ** Getting started
 
-*** Multi-tab select
+*** Tab multi-select
 
-[[./multitab_select.gif]]
+[[./tab_multi_select.gif]]
 
-Shift click on tab to multi-tab select.
+Shift click on tabs to multi-select.
 
 *** Code completion
 
